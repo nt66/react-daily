@@ -1,12 +1,12 @@
 /**
  * 子组件
  */
-import React from 'react';
+import React, { Component } from 'react';
 import MyContainer from './MyContainer';
 
-class MyComponent extends React.Component {
+class MyComponent extends Component {
     static defaultProps = {
-        seconds:150
+        seconds: 150
     }
     componentDidMount() {
         console.log('component');
@@ -18,6 +18,9 @@ class MyComponent extends React.Component {
         )
     }
 }
+// const MyComponent = () => (
+//     <span>定时器:{this.props.seconds}ms</span>
+// )
 
 //注意输出的写法
 export default MyContainer(MyComponent)

@@ -12,6 +12,11 @@ const MyContainer = (WrappedContent) => class extends React.Component {
             seconds: 0
         }
     }
+
+    //state 写法二
+    // state = {
+    //      seconds: 0
+    // }
     
     componentDidMount() {
         console.log('container');
@@ -25,8 +30,18 @@ const MyContainer = (WrappedContent) => class extends React.Component {
             seconds: this.state.seconds + 1000
         });
     }
+    ahandle(){
+        //sth to do
+    }
+    bhandle(){
+        //sth to do
+    }
     render() {
-        return (<WrappedContent {...this.props} {...this.state} />)
+        const newProps = {
+            ahandle:this.ahandle,
+            bhandle:this.bhandle
+        }
+        return (<WrappedContent {...newProps} {...this.state} />)
     }
 }
 export default MyContainer
