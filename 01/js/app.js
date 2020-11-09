@@ -16,14 +16,14 @@ export default class App extends React.Component {
     /*传递对象赋值 */
     getChildContext() {
         return {
-            text: ['金', '木', '水', '火', '土'],
-            onChildCallBack: this.onChildCallBack.bind(this)
+            text: ['金', '木', '水', '火', '土'], // 给子组件的值
+            onChildCallBack: this.onChildCallBack.bind(this) 
         }
     }
 
     /**回调 */
-    onChildCallBack() {
-        alert('回来了');
+    onChildCallBack(msg) {
+        console.log(msg,'回来了');
     }
 
     constructor(props){

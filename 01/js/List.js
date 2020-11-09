@@ -10,19 +10,20 @@ export default class List extends Component {
 
     constructor(props) {
         super(props);
+        // this.backRoot = this.backRoot.bind(this)
     }
 
-    backRoot() {
-        this.context.onChildCallBack();
+    backRoot(value) {
+        this.context.onChildCallBack(value);
     }
 
     render() {
-        
+        console.log('context text:',this.context.text)
         return (
             <div>
                 {
                     (this.context.text).map((item, index) => {
-                        return <a style={{marginRight:10}} href="javascript:void(0)" onClick={this.backRoot.bind(this)} >{item}</a>
+                        return <a style={{marginRight:10}} href="javascript:void(0)" onClick={this.backRoot.bind(this,item)} >{item}</a>
                     })
                 }
             </div>
